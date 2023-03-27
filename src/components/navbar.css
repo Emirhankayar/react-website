@@ -1,0 +1,193 @@
+
+/* ---------------- Navbar and burger menu ------------------ */
+nav {
+    width: 100%;
+    height: 30px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(240, 240, 240, 0.05);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    z-index: 999;
+}
+
+
+.burger-menu {
+    height: 100%;
+    width: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    cursor: pointer;
+    padding-right: 45px;
+}
+
+.burger-bar {
+    width: 2.5em;
+    height: 0.25em;
+    background-color: whitesmoke;
+    border-radius: 0.5em;
+}
+.burger-menu:hover{
+    transform: scale(1.1em);
+    transition-duration: 250ms;
+}
+
+.menu {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color:rgba(240, 240, 240, 0.05);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    opacity: 0;
+    z-index:99;
+}
+.menu-box{
+    list-style: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 8rem;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+.menu-box a{
+    font-family: 'Poppins';
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 40px;
+    margin: 0;
+}
+.menu-box li{
+    font-size: 45px;
+    border-bottom: solid rgba(240, 240, 240, 0.08);
+}
+.menu-box li a:hover{
+    font-size: 45px;
+    transition-duration: 500ms;
+}
+.menu-box li:hover{
+    background-color:rgba(240, 240, 240, 0.05) ;
+    transition-duration: 500ms;
+}
+.socialnav i{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* ------------- sliding menu ------------------ */
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-2000px);
+    transition-duration: 250ms;
+}
+
+.visible {
+    opacity: 1;
+    transition-duration: 750ms;
+}
+
+/* ----- animations--------- */
+/* clicked */
+.burger-bar.clicked:nth-child(1){
+    transform: rotate(45deg) translate(0.2em, 0.9em);
+    transition: ease-out 0.5s;
+}
+
+.burger-bar.clicked:nth-child(2){
+    transform: scale(0.1);
+    opacity: 0;
+    transition: ease-out 0.2s;
+}
+
+.burger-bar.clicked:nth-child(3){
+    transform: rotate(135deg) translate(-0.2em, 1em);
+    transition: ease-out 0.5s;
+}
+
+/* unclicked */
+.burger-bar.unclicked {
+    transform: rotate(0) translate(0);
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}
+
+
+
+/* RESPONSIVE */
+@media screen and (min-width:800px){
+    .burger-menu{
+        display: none;
+        height: 0;
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width:800px){
+    .box{
+        display: none;
+        height: 0;
+        opacity: 0;
+    }
+}
+
+/*Menu default*/
+.logobox {
+    padding-left: 20px;
+    display: inline-block;
+    margin:0 ;
+  }
+  .logobox img{
+    display: inline;
+    max-width: 70%;
+    height: 100%;
+  }
+  
+  .box{
+    float: right;
+    height: 60px;
+  }
+  
+  div .box li{
+    padding-right: 60px;
+    display: inline-block;
+    list-style-type: none;
+    width:80px;
+  
+  }
+  div .box li a{
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    color: #f1f1f1;
+  }
+
+  div .box li a:hover{
+    transition: .2s ease-in-out;
+    font-weight: 600;
+    transform: translateX(-0.5px);
+    text-shadow: #f1f1f1;
+  }
+
+  div .box li a::before{
+    display: block;
+    content: attr(title);
+    height: 0;
+    overflow: hidden;
+    transition-duration: 500ms;
+    font-weight: 600;
+  }

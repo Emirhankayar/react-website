@@ -1,0 +1,134 @@
+.contactall{
+    background-color: #6C6558;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.contacttitle{
+    padding-top: 110px;
+    margin: 0;
+    text-align: center;
+    color: whitesmoke;
+    font-weight: 500;
+    animation-name: moveDown;
+    animation-duration: 2s;
+    position: relative;
+}
+
+.crazy{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    animation-name: moveUp;
+    animation-duration: 2s;
+    position: relative;
+}
+
+form {
+    display: inline-flex;
+    flex-direction: column;
+    width: 400px;
+    gap: 10px;
+  }
+  
+form label {
+    font-size: 15px;
+    color: whitesmoke;
+}
+  
+form input {
+    line-height: 1.5;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: rgba(240, 240, 240, 0.6);
+    border: none;
+    outline: none;
+  }
+  
+input[type="submit"] {
+    padding: 6px 30px;
+    font-size: 14px;
+    background-color: #283633;
+    color:whitesmoke;
+    border: none;
+    border-radius: 100px;
+}
+input[type="submit"]:hover{
+    background-color: #467167 ;
+    transition-duration: 500ms;
+}
+.msg {
+    line-height: 1.5;
+    height: 9rem;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color:rgba(240, 240, 240, 0.6);
+    outline: none;
+}
+
+
+/* ANIMATIONS */
+@keyframes moveDown {
+    from {
+      opacity: 0;
+      transform: translateY(-1000px);
+    }
+    to {
+      opacity: 100;
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes moveUp {
+    from {
+      opacity: 0;
+      transform: translateY(+1000px);
+    }
+    to {
+      opacity: 100;
+      transform: translateY(0px);
+    }
+  }
+
+
+  /*RESPONSIVE MOBILE DEVICES 550PX*/
+  @media screen and (max-width: 550px){
+    h1{
+      font-size: 70px;
+      margin: 0;
+    }
+    h2{
+      font-size: 50px;
+    }
+    h3{
+      font-size: 30px;
+    }
+    .contacttitle{
+      margin: 0;
+    }
+    .contactall{
+      width: 100%;
+      position: absolute;
+    }
+    .crazy{
+      padding: 0;
+      margin: 0;
+    }
+    form{
+      width: 70%;
+      height: 100%;
+    }
+    form input{
+      line-height: 1rem;
+      font-size: 15px;
+    }
+    .msg{
+      height: 5rem;
+    }
+
+
+}
